@@ -12,6 +12,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          // Rendered by Outlet in Layout.js
           <Route
             index
             element={

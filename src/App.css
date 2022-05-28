@@ -1,5 +1,5 @@
 .App {
-  display: block;
+  height: 200vh;
 }
 
 header {
@@ -20,19 +20,21 @@ header {
   color: cadetblue;
   height: 50px;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+  
 }
 
 .content {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   margin: 60px;
+  
 }
 
 .flex-centered {
   display: flex;
   flex: 1;
   justify-content: center;
-  align-items: center;
 }
 
 .card {
@@ -135,3 +137,85 @@ header {
     transform: rotate(360deg) scale(0.7);
   }
 }
+
+/* Toggle switch */
+.switch {
+  position: relative;
+  display: inline-flex;
+  width: 60px;
+  height: 34px;
+  
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #4d4d4d;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fafafa;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #fafafa;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.toggle {
+  float: right;
+}
+
+.content {
+  height: 100%;
+}
+
+a:link { text-decoration: none; color: inherit; font-weight: bold;}
+
+
+a:visited { text-decoration: none; color: inherit; font-weight: bold;}
+
+
+a:hover { text-decoration: none; color: inherit; font-weight: bold;}
+
+
+a:active { text-decoration: none; color: inherit; font-weight: bold;}
+
+.colorText {
+  color: rgb(149, 149, 149)
+}
+

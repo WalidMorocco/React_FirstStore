@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import useFetchProduct from '../../hooks/products/useFetchProduct';
 import Spinner from '../Spinner';
 import Card from '../Card';
+import { ThemeContext } from '../../context/themeContext';
 
 const ProductDetail = () => {
   const navigate = useNavigate();
   const { productId } = useParams();
   const { data: product, loading, error } = useFetchProduct(productId);
+  const { theme } = useContext(ThemeContext);
 
   const handleGoBackClick = () => {
     navigate(-1);
@@ -23,7 +25,7 @@ const ProductDetail = () => {
 
   return (
     <Card>
-      <div className="product-detail-container">
+      <div className="product-detail-container" style={({ backgroundColor: theme.background, color: theme.foreground })}>
         {product && (
           <>
             <img
